@@ -28,4 +28,8 @@ Version 0.0.1
 
 КОНТАКТЫ
 --------
+<<<<<<< HEAD
 Email: gorodage@gmail.com
+=======
+Email: gorodage@gmail.com
+>>>>>>> 50f66a76e3f367b17e7785c27c2bfdb21409eec2
