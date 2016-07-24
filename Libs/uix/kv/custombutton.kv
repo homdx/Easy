@@ -1,0 +1,42 @@
+#:kivy 1.9.1
+
+<CustomButton>:
+    id: root.text
+    padding: 5
+    size_hint_y: None
+    height: 60
+    on_release: root.events_callback(root.text)
+
+    canvas:
+        # Цвет кнопки
+        Color:
+            rgba: root.button_color
+        Rectangle:
+            pos: self.x + 2.5, self.y - 3
+            size: self.size
+        # Тень кнопки
+        Color:
+            rgba: [1, 1, 1, 1]
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Image:
+        source: root.icon
+        size_hint: .2, 1
+    Label:
+        markup: True
+        text: root.text
+        text_size: self.width - 70, None
+        color: root.text_color
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: .1, 1
+        spacing: 6
+        ImageButton:
+            source: root.icon_people
+            on_release: root.events_callback({'people': root.text})
+        ImageButton:
+            source: root.icon_map
+            on_release: root.events_callback({'map': root.text})

@@ -1,0 +1,22 @@
+#:kivy 1.9.1
+
+<KDialog>
+    separator_height: '1sp'
+    size_hint_y: None
+    size_hint_x: .8
+    BoxLayout:
+        id: box_root
+        orientation: 'vertical'
+        ScrollView:
+            id: scroll
+            GridLayout:
+                id: box_content
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                canvas:
+                    Color:
+                        rgba: [1.0, 1.0, 1.0, 0.0]
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
