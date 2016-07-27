@@ -5,18 +5,18 @@
     padding: 5
     size_hint_y: None
     height: 60
-    on_release: root.events_callback(root.text)
+    on_press: root.press(self.canvas, root.text)
 
     canvas:
-        # Цвет кнопки
+        # Тень кнопки
         Color:
-            rgba: root.button_color
+            rgba: [0, 0, 0, .2]
         Rectangle:
             pos: self.x + 2.5, self.y - 3
             size: self.size
-        # Тень кнопки
+        # Цвет кнопки
         Color:
-            rgba: [1, 1, 1, 1]
+            rgba: root.button_color
         Rectangle:
             pos: self.pos
             size: self.size

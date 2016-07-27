@@ -137,6 +137,7 @@ class Program(App, prog_class.ShowBanners, prog_class.ShowLocations):
 
     def events_program(self, *args):
         '''Обработка событий программы.'''
+        print(args)
 
         if self.navigation_drawer.state == 'open':
             self.navigation_drawer.anim_to_state('closed')
@@ -146,7 +147,8 @@ class Program(App, prog_class.ShowBanners, prog_class.ShowLocations):
         else:  # нажата кнопка программы
             try:
                 _args = args[0]
-                event = _args if isinstance(_args, str) else _args.id
+                event = _args if isinstance(_args, str) else str(_args) if \
+                    isinstance(_args, dict) else _args.id
             except AttributeError:  # нажата кнопка девайса
                 event = args[1]
 
