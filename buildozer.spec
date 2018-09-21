@@ -33,7 +33,8 @@ version.filename = %(source.dir)s/main.py
 
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy
-requirements = kivy,pil,docutils,pyjnius
+requirements = kivy==1.10.1,android,python3crystax
+#,pil,docutils,pyjnius
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -62,28 +63,28 @@ fullscreen = 1
 android.permissions = INTERNET
 
 # (int) Android API to use
-android.api = 18
+#android.api = 18
 
 # (int) Minimum API required (8 = Android 2.2 devices)
-android.minapi = 8
+#android.minapi = 8
 
 # (int) Android SDK version to use
-android.sdk = 21
+#android.sdk = 21
 
 # (str) Android NDK version to use
-android.ndk = 9
+#android.ndk = 9
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 android.private_storage = False
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
-android.ndk_path = /home/zavulon/Opt/android-ndk-r9
+android.ndk_path = /home/user/.buildozer/crystax-ndk-10.3.1
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
-android.sdk_path = /home/zavulon/Opt/android-sdk
+#android.sdk_path = /home/zavulon/Opt/android-sdk
 
 # (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
-android.p4a_dir = /home/zavulon/Opt/Python/python-for-android
+#android.p4a_dir = /home/zavulon/Opt/Python/python-for-android
 
 # (list) python-for-android whitelist
 #android.p4a_whitelist =
