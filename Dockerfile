@@ -49,10 +49,6 @@ WORKDIR ${WORK_DIR}
 
 USER ${USER}
 
-RUN wget https://www.crystax.net/download/crystax-ndk-10.3.1-linux-x86_64.tar.xz?interactive=true -O ~/.buildozer/crystax.tar.xz \
-  && cd ~/.buildozer/ \
-  && time tar -xf crystax.tar.xz && rm ~/.buildozer/crystax.tar.xz
-
 # installs buildozer and dependencies
 RUN pip install --user Cython==0.25.2 buildozer
 # calling buildozer adb command should trigger SDK/NDK first install and update
@@ -64,9 +60,9 @@ RUN cd /tmp/ && buildozer init && buildozer android adb -- version \
 RUN sed s/'name="java.source" value="1.5"'/'name="java.source" value="7"'/ -i ${HOME_DIR}/.buildozer/android/platform/android-sdk-20/tools/ant/build.xml
 RUN sed s/'name="java.target" value="1.5"'/'name="java.target" value="7"'/ -i ${HOME_DIR}/.buildozer/android/platform/android-sdk-20/tools/ant/build.xml
 
-#RUN wget https://www.crystax.net/download/crystax-ndk-10.3.1-linux-x86_64.tar.xz?interactive=true -O ~/.buildozer/crystax.tar.xz \
-#  && cd ~/.buildozer/ \
-#  && time tar -xf crystax.tar.xz && rm ~/.buildozer/crystax.tar.xz
+RUN wget https://www.crystax.net/download/crystax-ndk-10.3.1-linux-x86_64.tar.xz?interactive=true -O ~/.buildozer/crystax.tar.xz \
+  && cd ~/.buildozer/ \
+  && time tar -xf crystax.tar.xz && rm ~/.buildozer/crystax.tar.xz
 
 #USER root
 #RUN chown user /home/user/ -R && chown -R user /home/user/hostcwd
